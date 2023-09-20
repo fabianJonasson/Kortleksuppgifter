@@ -18,7 +18,7 @@ dealCards(player2Deck, 5);
 
 function shuffleDeck() {
     let shuffledDeck = [];
-    for (let i = 0; i < deck.length; i++) {
+    for (let i = 0; i < 52; i++) {
         let randomIndex = Math.floor(Math.random() * deck.length);
         shuffledDeck.push(deck[randomIndex]);
         deck.splice(randomIndex, 1); 
