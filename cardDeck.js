@@ -16,6 +16,8 @@ deck = shuffleDeck();
 dealCards(player1Deck, 5);
 dealCards(player2Deck, 5);
 
+findCard(player1Deck, "9 of clubs");
+
 function shuffleDeck() {
     let shuffledDeck = [];
     for (let i = 0; i < 52; i++) {
@@ -30,5 +32,14 @@ function dealCards(player, number) {
     for(let i = 0; i < number; i++) {
         player.push(deck[i]);
         deck.splice(i, 1);
+    }
+}
+
+function findCard(player, card) {
+    let includesCard = player.includes(card);
+    if(includesCard) {
+        console.log(`Input deck contains a ${card}.`);
+    } else {
+        console.log(`Input deck does not contain a ${card}`);
     }
 }
