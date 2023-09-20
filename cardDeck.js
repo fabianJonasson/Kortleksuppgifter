@@ -7,3 +7,16 @@ suite.forEach(color => {
         deck.push(`${num} of ${color}`); 
     })
 });
+
+
+function shuffleDeck() {
+    let shuffledDeck = [];
+    for (let i = 0; i < deck.length; i++) {
+        let randomIndex = Math.floor(Math.random() * deck.length);
+        shuffledDeck.push(deck[randomIndex]);
+        deck.splice(randomIndex, 1); 
+    }
+    return shuffledDeck;   
+}
+
+deck = shuffleDeck();
