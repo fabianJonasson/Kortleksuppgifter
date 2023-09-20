@@ -16,7 +16,9 @@ deck = shuffleDeck();
 dealCards(player1Deck, 5);
 dealCards(player2Deck, 5);
 
-findCard(player1Deck, "9 of clubs");
+console.log(player1Deck);
+console.log(player2Deck);
+compareSuite("clubs");
 
 function shuffleDeck() {
     let shuffledDeck = [];
@@ -42,4 +44,17 @@ function findCard(player, card) {
     } else {
         console.log(`Input deck does not contain a ${card}`);
     }
+}
+
+function compareSuite(compareSuite) {
+    let result1 = player1Deck.filter(card => card.endsWith(compareSuite));
+    let result2 = player2Deck.filter(card => card.endsWith(compareSuite));
+
+    if(result1.length > result2.length) {
+        console.log(`Player 1 had more ${compareSuite}`);
+    } else if (result2.length > result1.length) {
+        console.log(`Player 2 had more ${compareSuite}`);
+    } else {
+        console.log(`All players had the same amount of ${compareSuite}`);
+    } 
 }
